@@ -12,7 +12,7 @@
 
 <body>
     <?php
-    require_once("classes/personnageSS.class.php");
+    require_once("classes/fruits.class.php");
     include("menu.php");
 
     // définition d'une class en PHP
@@ -24,9 +24,9 @@
 
     ?>
     <br><br>
-    <h1 class="fst-italic text-center">Saint Seya</h1>
+    <h1 class="fst-italic text-center">Une liste de fruits</h1>
     <br><br>
-    <h2 class="fst-italic text-center">Les perso définis avec les attributs et méthodes statiques</h2>
+    <h2 class="fst-italic text-center">Définie en POO</h2>
     <br><br>
 
 
@@ -35,30 +35,32 @@
 
 
     <div class="fst-italic text-center border border-warning">
-        <div class="d-flex justify-content-between">
+        <div class="">
             <?php
 
-            $seya = new PersoSS("Seya", PersoSS::ARMURESEYA, PersoSS::FORCESEYA,  "seya.jpg");
+            $pommeA = new Fruits(Fruits::POMME, Fruits::POIDSPOMMEA,  "pomme.jpg");
+            $pommeB = new Fruits(Fruits::POMME, Fruits::POIDSPOMMEB, "pomme.jpg");
+            $pommeC = new Fruits(Fruits::POMME, Fruits::POIDSPOMMEC, "pomme.jpg");
+            $fraiseA = new Fruits(Fruits::FRAISE, Fruits::POIDSFRAISEA,  "fraise.jpg");
+            $fraiseB = new Fruits(Fruits::FRAISE, Fruits::POIDSFRAISEB, "fraise.jpg");
+            $fraiseC = new Fruits(Fruits::FRAISE, Fruits::POIDSFRAISEC, "fraise.jpg");
             echo "<br/>";
-            $sheryu = new PersoSS("Sheryu", PersoSS::ARMURESHERYU, PersoSS::FORCESHERYU, "sheryu.jpg");
-            echo "<br/>";
-            $hyoga = new PersoSS("Hyoga", PersoSS::ARMUREHYOGA, PersoSS::FORCEHYOGA, "hyoga.jpg");
-            echo "<br/>";
+            echo ($pommeA);
+            echo "<br>";
+            echo ($fraiseA);
+            echo "<br>";
+            echo ($pommeB);
+            echo "<br>";
+            echo ($fraiseB);
+            echo "<br>";
+            echo ($pommeC);
+            echo "<br>";
+            echo ($fraiseC);
+            // grace a la function __toString nous pouvons directement faire l affichage de notre objet
+
 
             ?>
         </div>
-        <?php
-        echo "<pre>";
-        $persos = PersoSS::getListePersoSS();
-        // print_r(PersoSS::$personnagesSS);
-        foreach ($persos as $perso) {
-            $perso->afficherMesPersonnages();
-            // ce foreach permet d'afficher mes personnages via la function afficherMesPersonnages
-        }
-
-
-
-        ?>
         <br>
 
     </div>

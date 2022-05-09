@@ -30,7 +30,7 @@
                     <a class="nav-link" href="page6.php">Attributs et méthodes statiques</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href=""></a>
+                    <a class="nav-link" href="page7.php">Liste de Fruit</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href=""></a>
