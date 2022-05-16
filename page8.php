@@ -12,6 +12,7 @@
 
 <body>
     <?php
+    require_once("classes/panier.class.php");
     require_once("classes/fruits.class.php");
     include("menu.php");
 
@@ -24,7 +25,7 @@
 
     ?>
     <br><br>
-    <h1 class="fst-italic text-center">Une liste de fruits</h1>
+    <h1 class="fst-italic text-center">Des paniers contenant des fruits</h1>
     <br><br>
     <h2 class="fst-italic text-center">Définie en POO</h2>
     <br><br>
@@ -38,33 +39,40 @@
         <div class="">
             <?php
 
-            $pommeA = new Fruits(Fruits::POMME, Fruits::POIDSPOMMEA,  "pomme.jpg");
-            $pommeB = new Fruits(Fruits::POMME, Fruits::POIDSPOMMEB, "pomme.jpg");
-            $pommeC = new Fruits(Fruits::POMME, Fruits::POIDSPOMMEC, "pomme.jpg");
-            $fraiseA = new Fruits(Fruits::FRAISE, Fruits::POIDSFRAISEA,  "fraise.jpg");
-            $fraiseB = new Fruits(Fruits::FRAISE, Fruits::POIDSFRAISEB, "fraise.jpg");
-            $fraiseC = new Fruits(Fruits::FRAISE, Fruits::POIDSFRAISEC, "fraise.jpg");
-            // echo "<br/>";
-            // echo ($pommeA);
-            // echo "<br>";
-            // echo ($fraiseA);
-            // echo "<br>";
-            // echo ($pommeB);
-            // echo "<br>";
-            // echo ($fraiseB);
-            // echo "<br>";
-            // echo ($pommeC);
-            // echo "<br>";
-            // echo ($fraiseC);
-            // premiere maniere d 'affichage simple
-            // grace a la function __toString nous pouvons directement faire l affichage de notre objet
-            $fruits = [$pommeA, $fraiseA, $pommeB, $fraiseB, $pommeC, $fraiseC];
+            $pommeA = new Fruits(Fruits::POMME, Fruits::POIDSPOMMEA,);
+            $pommeB = new Fruits(Fruits::POMME, Fruits::POIDSPOMMEB,);
+            $pommeC = new Fruits(Fruits::POMME, Fruits::POIDSPOMMEC,);
+            $fraiseA = new Fruits(Fruits::FRAISE, Fruits::POIDSFRAISEA,);
+            $fraiseB = new Fruits(Fruits::FRAISE, Fruits::POIDSFRAISEB,);
+            $fraiseC = new Fruits(Fruits::FRAISE, Fruits::POIDSFRAISEC,);
 
-            foreach ($fruits as $fruit) {
-                echo $fruit;
-                echo "<br>";
-            }
-            // on peut faire un tableau et ensuite faire un affichage avec une boucle foreach
+            // création d'un panier 
+
+            $panier1 = new Panier();
+            $panier2 = new Panier();
+            // print_r($panier2);
+            // afficher mon panier pour voir s'il existe
+
+
+            // création d'une function pour alimenter notre panier1
+            // de pommes et de fraises
+            // addFruit est une fonction determinée dans notre class Panier
+            $panier1->addFruit($pommeA);
+            $panier1->addFruit($fraiseA);
+            $panier1->addFruit($pommeB);
+            $panier2->addFruit($fraiseC);
+            // si je mets mon print_r avant mon panier sera vide car j appelle la méthode avant le remplissage
+            // des paniers
+            // en le mettant après j affiche mes paniers remplis
+            echo "<pre>";
+            print_r($panier1);
+
+            echo $panier1;
+            echo "<br>";
+            echo "<p>----</p><br>";
+            echo $panier2;
+
+
 
             ?>
         </div>

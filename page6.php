@@ -48,7 +48,7 @@
             ?>
         </div>
         <?php
-        echo "<pre>";
+
         $persos = PersoSS::getListePersoSS();
         // print_r(PersoSS::$personnagesSS);
         foreach ($persos as $perso) {
